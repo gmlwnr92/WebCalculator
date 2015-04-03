@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 기본 동작을 구현하기 위한 함수 구현합시다. */
+
+	var textFormula = "";
+
+	function input(input) {
+		document.getElementById('text').value += input;
+		textFormula = document.getElementById('text').value;
+	}
+
+	function result() {
+		var result = textFormula;
+		document.getElementById('text').value = eval(result);
+	}
+
+	function reset() {
+		document.getElementById('text').value = " ";
+	}
+</script>
+
+
+
+<style>
+/* 디자인을 이쁘게~^_^ */
+table {
+	background-color: hotpink;
+	width: 250px;
+	height: 450px;
+}
+
+#btn {
+	width: 100px;
+	height: 90px;
+	font-size: 20px;
+}
+
+#text {
+	width: 413px;
+	height: 70px;
+	font-size: 30px;
+	text-align: right;
+}
+</style>
+
+</head>
+<body>
+	<!-- 기본 틀을 생성 합시다. -->
+	<h1>희주 계산기</h1>
+	<table>
+		<tr>
+			<td><input type="text" id="text" name="text" /> <br /> <input
+				type="button" id="btn" value="7" onclick="input('7')" /> <input
+				type="button" id="btn" value="8" onclick="input('8')" /> <input
+				type="button" id="btn" value="9" onclick="input('9')" /> <input
+				type="button" id="btn" value="/" onclick="input('/')" /> <br /> <input
+				type="button" id="btn" value="4" onclick="input('4')" /> <input
+				type="button" id="btn" value="5" onclick="input('5')" /> <input
+				type="button" id="btn" value="6" onclick="input('6')" /> <input
+				type="button" id="btn" value="-" onclick="input('-')" /> <br /> <input
+				type="button" id="btn" value="1" onclick="input('1')" /> <input
+				type="button" id="btn" value="2" onclick="input('2')" /> <input
+				type="button" id="btn" value="3" onclick="input('3')" /> <input
+				type="button" id="btn" value="x" onclick="input('*')" /> <br /> <input
+				type="button" id="btn" value="0" onclick="input('0')" /> <input
+				type="button" id="btn" value="=" onclick="result()" /> <input
+				type="button" id="btn" value="C" onclick="reset()" /> <input
+				type="button" id="btn" value="+" onclick="input('+')" /> <br /></td>
+		</tr>
+	</table>
+</body>
+</html>
